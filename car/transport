@@ -1,0 +1,58 @@
+#include <iostream>
+
+//рубль будет?
+class Transport {
+public:
+    virtual void transportPassengers() = 0;
+    virtual void transportGoods() = 0;
+};
+
+class Car : public Transport {
+public:
+    void transportPassengers() override {
+        std::cout << "Car is transporting passengers for 3 hours and cost $5" << std::endl;
+    }
+
+    void transportGoods() override {
+        std::cout << "Car is transporting goods for 2 hours and cost $10" << std::endl;
+    }
+};
+
+class Bicycle : public Transport {
+public:
+    void transportPassengers() override {
+        std::cout << "Bicycle is transporting passengers for 1 hour and cost $1" << std::endl;
+    }
+
+    void transportGoods() override {
+        std::cout << "Bicycle is transporting goods for 3 hours and cost $2" << std::endl;
+    }
+};
+
+class Cart : public Transport {
+public:
+    void transportPassengers() override {
+        std::cout << "Cart is transporting passengers for 2 hours and cost $2" << std::endl;
+    }
+
+    void transportGoods() override {
+        std::cout << "Cart is transporting goods for 4 hours and cost $3" << std::endl;
+    }
+};
+
+int main() {
+    Car car;
+    Bicycle bicycle;
+    Cart cart;
+
+    car.transportPassengers();
+    car.transportGoods();
+
+    bicycle.transportPassengers();
+    bicycle.transportGoods();
+
+    cart.transportPassengers();
+    cart.transportGoods();
+
+    return 0;
+}
